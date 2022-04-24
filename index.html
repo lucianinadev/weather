@@ -17,19 +17,23 @@
   </head>
   <body>
     <div class="py-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="py-2 text-center bg-gray-300">
-        <p class=" text-base leading-6 text-indigo-600 font-semibold tracking-wide uppercase">
-          Platzi manipulacion del dom
-        </p>
+      <div class="py-2 text-center ">
         <h3
-          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10"
+          class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 mb-4"
         >
         Weather App
         </h3>
-        <p>Ingresar ciudad:</p>
-        <input type="text" class="border border-teal-600 rounded" name="country" id="country" placeholder="Ciudad" value="trelew">
-        <button class="bg-white px-4 rounded border border-black" type="submit" id="submit">Submit</button>
-        <div id="weather"></div>
+        <input type="text" class="border border-teal-600 bg-gray-200 text-gray-700 rounded px-3 py-1" name="country" id="country" placeholder="Ingresar ciudad..." value="trelew">
+        <button class="bg-black px-4 rounded border border-black text-white" type="submit" id="submit">Submit</button>
+        <div id="weather" class="flex flex-nowrap"></div>
+
+        <!-- <div class="mt-2 p-2 w-32 mx-auto bg-blue-300 rounded-md shadow-lg shadow-blue-500/50">
+          <h3 class="text-left  font-semibold text-sm capitalize">trelew</h3>
+          <p class="text-left  text-4xl relative ">14<span class="text-sm absolute top-1">°C</span></p>
+          <img class="mx-auto" src="https://openweathermap.org/img/wn/04n@2x.png" alt="">
+          <p class="text-left text-sm ">Nubes dispersas</p>
+        </div> -->
+      
       </div>
     </div>
 

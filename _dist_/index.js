@@ -10,22 +10,32 @@ const accion = () => {
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
+            const container = document.createElement('div')
+            container.className = "mt-2 p-2 w-40 mx-auto bg-black rounded-md shadow-lg shadow-blue-500/50"
             const weather = data.weather[0]
             console.log(data.main.temp);
 
             let elNombre = document.createElement('h2')
             elNombre.textContent = country;
+            elNombre.className = "text-left text-white font-semibold text-sm capitalize"
 
             let elClimaDesc = document.createElement('p')
             elClimaDesc.textContent = weather.description
+            elClimaDesc.className = "text-center text-gray-200 text-xs"
 
             let elTemperatura = document.createElement('p')
-            elTemperatura.textContent = `Temperatura: ${data.main.temp} °C`
+            elTemperatura.textContent = `${Math.round(data.main.temp)}`
+            elTemperatura.className = "text-left font-semibold text-white text-6xl relative tracking-tighter"
 
+            let elCelcius = document.createElement('span')
+            elCelcius.textContent = "°C"
+            elCelcius.className = "text-sm absolute top-1 tracking-normal"
+            elTemperatura.append(elCelcius)
             let elIcon = document.createElement('img')
-            elIcon.className = "mx-auto"
+            elIcon.className = "mx-auto -mt-2"
             elIcon.src = ` http://openweathermap.org/img/wn/${weather.icon}@2x.png`
-            app.append(elNombre,elClimaDesc,elIcon,elTemperatura)
+            container.append(elNombre,elTemperatura,elIcon,elClimaDesc)
+            app.append(container)
             
         });
 };
