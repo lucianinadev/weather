@@ -6,15 +6,13 @@ const key = "dffac76febe572281ea864fb119d7d27";
 const accion = () => {
     const country = input.value;
     const url =`http://api.openweathermap.org/data/2.5/weather?q=${country}&lang=sp&APPID=${key}&units=metric`;
-    console.log(country);
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
             const container = document.createElement('div')
-            container.className = "p-2 mr-2 w-40 bg-black rounded-md shadow-lg shadow-blue-500/50 relative"
+            container.className = "p-2 mr-2 w-40 bg-black rounded-md shadow-lg shadow-gray-500/50 relative"
             const weather = data.weather[0]
-            console.log(data.main.temp);
-
+            
             let elNombre = document.createElement('h2')
             elNombre.textContent = country;
             elNombre.className = "text-left text-white font-semibold text-sm capitalize"
@@ -33,7 +31,7 @@ const accion = () => {
             elTemperatura.append(elCelcius)
 
             let elIcon = document.createElement('img')
-            elIcon.className = "mx-auto -mt-2"
+            elIcon.className = "mx-auto bg-gray-300 rounded-full "
             elIcon.src = ` http://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
             let elClose = document.createElement('span')
