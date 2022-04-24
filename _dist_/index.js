@@ -6,13 +6,12 @@ const key = "dffac76febe572281ea864fb119d7d27";
 const accion = () => {
     const country = input.value;
     const url =`http://api.openweathermap.org/data/2.5/weather?q=${country}&lang=sp&APPID=${key}&units=metric`;
-    const urlimg = 
     console.log(country);
     fetch(url)
     .then((response) => response.json())
     .then((data) => {
             const container = document.createElement('div')
-            container.className = "mt-2 p-2 w-40 mx-auto bg-black rounded-md shadow-lg shadow-blue-500/50 relative"
+            container.className = "p-2 mr-2 w-40 bg-black rounded-md shadow-lg shadow-blue-500/50 relative"
             const weather = data.weather[0]
             console.log(data.main.temp);
 
@@ -39,10 +38,10 @@ const accion = () => {
 
             let elClose = document.createElement('span')
             elClose.textContent = "x"
-            elClose.className = "absolute text-white top-0 font-semibold right-2 p-1"
+            elClose.className = "absolute text-white top-0 font-semibold right-2 p-1 cursor-pointer"
             elClose.id = "close"
             elClose.addEventListener("click",remove)
-            
+
             container.append(elClose,elNombre,elTemperatura,elIcon,elClimaDesc)
             app.append(container)
             
