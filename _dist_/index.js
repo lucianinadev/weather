@@ -33,7 +33,7 @@ const accion = () => {
 
             let elIcon = document.createElement('img')
             elIcon.className = "mx-auto bg-gray-300 rounded-full "
-            elIcon.src = ` http://openweathermap.org/img/wn/${weather.icon}@2x.png`
+            elIcon.src = ` https://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
             let elClose = document.createElement('span')
             elClose.textContent = "x"
