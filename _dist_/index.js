@@ -5,7 +5,7 @@ const app = document.querySelector('#weather')
 const key = "dffac76febe572281ea864fb119d7d27";
 const accion = () => {
     const country = input.value;
-    const url =`http://api.openweathermap.org/data/2.5/weather?q=${country}&lang=sp&APPID=${key}&units=metric`;
+    const url =`https://api.openweathermap.org/data/2.5/weather?q=${country}&lang=sp&APPID=${key}&units=metric`;
     window
     .fetch(url)
     .then((response) => response.json())
