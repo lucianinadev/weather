@@ -6,13 +6,14 @@ const key = "dffac76febe572281ea864fb119d7d27";
 const accion = () => {
     const country = input.value;
     const url =`http://api.openweathermap.org/data/2.5/weather?q=${country}&lang=sp&APPID=${key}&units=metric`;
-    fetch(url)
+    window
+    .fetch(url)
     .then((response) => response.json())
     .then((data) => {
             const container = document.createElement('div')
             container.className = "p-2 mr-2 w-40 bg-black rounded-md shadow-lg shadow-gray-500/50 relative"
             const weather = data.weather[0]
-            
+
             let elNombre = document.createElement('h2')
             elNombre.textContent = country;
             elNombre.className = "text-left text-white font-semibold text-sm capitalize"
