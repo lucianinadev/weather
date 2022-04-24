@@ -11,7 +11,7 @@ const accion = () => {
     .then((response) => response.json())
     .then((data) => {
             const container = document.createElement('div')
-            container.className = "p-2 mr-2 w-40 bg-black rounded-md shadow-lg shadow-gray-500/50 relative"
+            container.className = "p-2 mr-2 mb-2 w-32 bg-black rounded-md shadow-lg shadow-gray-500/50 relative"
             const weather = data.weather[0]
 
             let elNombre = document.createElement('h2')
@@ -33,7 +33,7 @@ const accion = () => {
 
             let elIcon = document.createElement('img')
             elIcon.className = "mx-auto bg-gray-300 rounded-full "
-            elIcon.src = ` https://openweathermap.org/img/wn/${weather.icon}@2x.png`
+            elIcon.src = `https://openweathermap.org/img/wn/${weather.icon}@2x.png`
 
             let elClose = document.createElement('span')
             elClose.textContent = "x"
